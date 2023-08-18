@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 17, 2023 at 10:56 AM
+-- Generation Time: Aug 18, 2023 at 10:58 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -127,7 +127,11 @@ CREATE TABLE `infoagensi` (
   `JumlahPendapatanSemasaDP` varchar(100) NOT NULL,
   `TarikhSumbanganDP` date NOT NULL,
   `AmaunSumbanganDP` varchar(100) NOT NULL,
-  `BuktiSumbanganDP` longblob NOT NULL
+  `BuktiSumbanganDP` longblob NOT NULL,
+  `JumlahKeuntunganSemasaSP` varchar(100) NOT NULL,
+  `TarikhSumbanganSP` date NOT NULL,
+  `AmaunSumbanganSP` varchar(100) NOT NULL,
+  `BuktiSumbanganSP` longblob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
