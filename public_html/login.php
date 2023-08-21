@@ -21,7 +21,7 @@ if ($conn) {
     if (mysqli_num_rows($result) == 1) {
         // Display a success message or redirect to a new page after successful login
         
-        header("Location: LamanUtama.html");
+        header("Location: LamanUtama.php");
         exit();
     } else {
         // Display an error message
@@ -32,7 +32,7 @@ if ($conn) {
 	
 	if (mysqli_num_rows($result1) == 1) {
         // Display a success message or redirect to a new page after successful login
-        header("Location: LamanUtama.html");
+        header("Location: LamanUtama.php");
         exit();
     } else {
         // Display an error message

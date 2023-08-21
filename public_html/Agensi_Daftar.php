@@ -296,7 +296,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                                 <input type="date" class="form-control" id="TarikhBayaranKerajaanNegeri" name="TarikhBayaranKerajaanNegeri">
                               </div>
                             </div>
-                            
+
                             <div class="row">
                               <div class="col">
                                 <label for="PokokBayaranSehingga" class="col col-form-label"  >Pokok </label>
@@ -390,14 +390,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                             <div class="row">
                               <div class="col">
                                 <label for="Pokok" class="col col-form-label">Pokok</label>
-                                <input type="text" class="form-control" id="PokokBakiTunggakanKerajaanNegeri" name="PokokBakiTunggakanKerajaanNegeri" onkeyup="KiraTunggakanPinjamanKerajaanNegeri()">
+                                <input type="text" class="form-control" id="PokokBakiTunggakanKerajaanNegeri" name="PokokBakiTunggakanKerajaanNegeri" onkeyup="KiraTunggakanPinjamanKerajaanNegeri();KiraJumlahTunggakanKerajaanNegeri()">
                               </div>
                             </div>
 
                             <div class="row">
                               <div class="col">
                                 <label for="Faedah" class="col col-form-label">Faedah</label>
-                                <input type="text" class="form-control" id="FaedahBakiTunggakanKerajaanNegeri" name="FaedahBakiTunggakanKerajaanNegeri" onkeyup="KiraTunggakanPinjamanKerajaanNegeri()">
+                                <input type="text" class="form-control" id="FaedahBakiTunggakanKerajaanNegeri" name="FaedahBakiTunggakanKerajaanNegeri" onkeyup="KiraTunggakanPinjamanKerajaanNegeri();KiraJumlahTunggakanKerajaanNegeri()">
                               </div>
                             </div>
 
@@ -407,7 +407,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                                 <input type="text" class="form-control" id="JumlahTunggakanKerajaanNegeri" name="JumlahTunggakanKerajaanNegeri" ">
                               </div>
                             </div>
-                            
+
                             <div class="row">
                               <div class="col">
                                 <label for="JumlahTunggakanSekarang" class="col col-form-label">Baki Tunggakan Baharu</label>
@@ -446,7 +446,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                               </div>
                             </div>
                             <br>
-                            
+
                             <div class="row">
                               <div class="col">
                                 <h3>Bayaran Sehingga </h3>
@@ -454,7 +454,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                                 <input type="date" class="form-control" id="TarikhBayaranSehinggaPersekutuan" name="TarikhBayaranSehinggaPersekutuan">
                               </div>
                             </div>
-                            
+
                             <div class="row">
                               <div class="col">
                                 <label for="PokokBayaranSehingga" class="col col-form-label">Pokok</label>
@@ -554,21 +554,21 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                             <div class="row">
                               <div class="col">
                                 <label for="Pokok" class="col col-form-label">Pokok</label>
-                                <input type="text" class="form-control" id="PokokTunggakanPersekutuan" name="PokokTunggakanPersekutuan" onkeyup="KiraTunggakanPinjamanPersekutuan()">
+                                <input type="text" class="form-control" id="PokokTunggakanPersekutuan" name="PokokTunggakanPersekutuan" onkeyup="KiraTunggakanPinjamanPersekutuan();KiraJumlahTunggakanPersekutuan()">
                               </div>
                             </div>
 
                             <div class="row">
                               <div class="col">
                                 <label for="Pokok" class="col col-form-label">Faedah</label>
-                                <input type="text" class="form-control" id="FaedahTunggakanPersekutuan" name="FaedahTunggakanPersekutuan" onkeyup="KiraTunggakanPinjamanPersekutuan()">
+                                <input type="text" class="form-control" id="FaedahTunggakanPersekutuan" name="FaedahTunggakanPersekutuan" onkeyup="KiraTunggakanPinjamanPersekutuan();KiraJumlahTunggakanPersekutuan()">
                               </div>
                             </div>
 
                             <div class="row">
                               <div class="col">
                                 <label for="JumlahTunggakan" class="col col-form-label">Jumlah Tunggakan</label>
-                                <input type="text" class="form-control" id="JumlahTunggakanPersekutuan" name="JumlahTunggakanPersekutuan">
+                                <input type="text" class="form-control" id="JumlahTunggakanPersekutuan" name="JumlahTunggakanPersekutuan" >
                               </div>
                             </div>
 
@@ -810,270 +810,288 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
     <script src="https://cdn.datatables.net/plug-ins/1.13.5/api/sum().js"></script>
     <script>
 
-                                  let table = new DataTable('#TableAsetSemasa');
-                                  let table1 = new DataTable('#TableAsetTetap');
-                                  let table2 = new DataTable('#TableLiabilitiPanjang');
-                                  let table3 = new DataTable('#TableLiabilitiPendek');
-                                  function DaftarAgensiAnakSyarikatBadanBerkanun() {
-                                    var selectbutton = document.getElementById('selectform');
-                                    var selecteditem = selectbutton.value;
-                                    var setheading = document.getElementById('heading');
-                                    var labelcontainer = document.getElementById('NamaAgensidanAnakSyarikatLabel');
-                                    var inputFieldContainer = document.getElementById('NamaAgensidanAnakSyarikatInput');
-                                    var labelcontainer1 = document.getElementById('AlamatAgensidanAnakSyarikatLabel');
-                                    var inputFieldContainer1 = document.getElementById('AlamatAgensidanAnakSyarikatInput');
-                                    var labelcontainer2 = document.getElementById('NamaHubungiAgensidanAnakSyarikatLabel');
-                                    var inputFieldContainer2 = document.getElementById('NamaHubungiAgensidanAnakSyarikatInput');
-                                    var labelcontainer3 = document.getElementById('NomborTelefonAgensidanAnakSyarikatLabel');
-                                    var inputFieldContainer3 = document.getElementById('NomborTelefonAgensidanAnakSyarikatInput');
-                                    var labelcontainer4 = document.getElementById('AlamatEmelAgensidanAnakSyarikatLabel');
-                                    var inputFieldContainer4 = document.getElementById('AlamatEmelAgensidanAnakSyarikatInput');
-                                    var labelcontainer5 = document.getElementById('TaklukanSyarikat');
-                                    var inputFieldContainer5 = document.getElementById('TaklukanSyarikatSelect');
-                                    var labelcontainer6 = document.getElementById('NamaBadanBerkanunLabel');
-                                    var inputFieldContainer6 = document.getElementById('NamaBadanBerkanunInput');
-                                    var labelcontainer7 = document.getElementById('AlamatBadanBerkanunLabel');
-                                    var inputFieldContainer7 = document.getElementById('AlamatBadanBerkanunInput');
-                                    var labelcontainer8 = document.getElementById('NamaHubungiBadanBerkanunLabel');
-                                    var inputFieldContainer8 = document.getElementById('NamaHubungiBadanBerkanunInput');
-                                    var labelcontainer9 = document.getElementById('NomborTelefonBadanBerkanunLabel');
-                                    var inputFieldContainer9 = document.getElementById('NomborTelefonBadanBerkanunInput');
-                                    var labelcontainer10 = document.getElementById('AlamatEmelBadanBerkanunLabel');
-                                    var inputFieldContainer10 = document.getElementById('AlamatEmelBadanBerkanunInput');
+                                let table = new DataTable('#TableAsetSemasa');
+                                let table1 = new DataTable('#TableAsetTetap');
+                                let table2 = new DataTable('#TableLiabilitiPanjang');
+                                let table3 = new DataTable('#TableLiabilitiPendek');
+                                function DaftarAgensiAnakSyarikatBadanBerkanun() {
+                                  var selectbutton = document.getElementById('selectform');
+                                  var selecteditem = selectbutton.value;
+                                  var setheading = document.getElementById('heading');
+                                  var labelcontainer = document.getElementById('NamaAgensidanAnakSyarikatLabel');
+                                  var inputFieldContainer = document.getElementById('NamaAgensidanAnakSyarikatInput');
+                                  var labelcontainer1 = document.getElementById('AlamatAgensidanAnakSyarikatLabel');
+                                  var inputFieldContainer1 = document.getElementById('AlamatAgensidanAnakSyarikatInput');
+                                  var labelcontainer2 = document.getElementById('NamaHubungiAgensidanAnakSyarikatLabel');
+                                  var inputFieldContainer2 = document.getElementById('NamaHubungiAgensidanAnakSyarikatInput');
+                                  var labelcontainer3 = document.getElementById('NomborTelefonAgensidanAnakSyarikatLabel');
+                                  var inputFieldContainer3 = document.getElementById('NomborTelefonAgensidanAnakSyarikatInput');
+                                  var labelcontainer4 = document.getElementById('AlamatEmelAgensidanAnakSyarikatLabel');
+                                  var inputFieldContainer4 = document.getElementById('AlamatEmelAgensidanAnakSyarikatInput');
+                                  var labelcontainer5 = document.getElementById('TaklukanSyarikat');
+                                  var inputFieldContainer5 = document.getElementById('TaklukanSyarikatSelect');
+                                  var labelcontainer6 = document.getElementById('NamaBadanBerkanunLabel');
+                                  var inputFieldContainer6 = document.getElementById('NamaBadanBerkanunInput');
+                                  var labelcontainer7 = document.getElementById('AlamatBadanBerkanunLabel');
+                                  var inputFieldContainer7 = document.getElementById('AlamatBadanBerkanunInput');
+                                  var labelcontainer8 = document.getElementById('NamaHubungiBadanBerkanunLabel');
+                                  var inputFieldContainer8 = document.getElementById('NamaHubungiBadanBerkanunInput');
+                                  var labelcontainer9 = document.getElementById('NomborTelefonBadanBerkanunLabel');
+                                  var inputFieldContainer9 = document.getElementById('NomborTelefonBadanBerkanunInput');
+                                  var labelcontainer10 = document.getElementById('AlamatEmelBadanBerkanunLabel');
+                                  var inputFieldContainer10 = document.getElementById('AlamatEmelBadanBerkanunInput');
 
-                                    if (selecteditem == "1") {
-                                      setheading.style.display = 'block';
-                                      setheading.innerHTML = "Agensi / Anak Syarikat";
-                                      labelcontainer.style.display = 'block';
-                                      inputFieldContainer.style.display = 'block';
-                                      labelcontainer1.style.display = 'block';
-                                      inputFieldContainer1.style.display = 'block';
-                                      labelcontainer2.style.display = 'block';
-                                      inputFieldContainer2.style.display = 'block';
-                                      labelcontainer3.style.display = 'block';
-                                      inputFieldContainer3.style.display = 'block';
-                                      labelcontainer4.style.display = 'block';
-                                      inputFieldContainer4.style.display = 'block';
-                                      labelcontainer5.style.display = 'block';
-                                      inputFieldContainer5.style.display = 'block';
-                                      labelcontainer6.style.display = 'none';
-                                      inputFieldContainer6.style.display = 'none';
-                                      labelcontainer7.style.display = 'none';
-                                      inputFieldContainer7.style.display = 'none';
-                                      labelcontainer8.style.display = 'none';
-                                      inputFieldContainer8.style.display = 'none';
-                                      labelcontainer9.style.display = 'none';
-                                      inputFieldContainer9.style.display = 'none';
-                                      labelcontainer10.style.display = 'none';
-                                      inputFieldContainer10.style.display = 'none';
-                                    } else if (selecteditem == "2") {
-                                      setheading.style.display = 'block';
-                                      setheading.innerHTML = "Badan Berkanun";
-                                      labelcontainer.style.display = 'none';
-                                      inputFieldContainer.style.display = 'none';
-                                      labelcontainer1.style.display = 'none';
-                                      inputFieldContainer1.style.display = 'none';
-                                      labelcontainer2.style.display = 'none';
-                                      inputFieldContainer2.style.display = 'none';
-                                      labelcontainer3.style.display = 'none';
-                                      inputFieldContainer3.style.display = 'none';
-                                      labelcontainer4.style.display = 'none';
-                                      inputFieldContainer4.style.display = 'none';
-                                      labelcontainer5.style.display = 'none';
-                                      inputFieldContainer5.style.display = 'none';
-                                      labelcontainer6.style.display = 'block';
-                                      inputFieldContainer6.style.display = 'block';
-                                      labelcontainer7.style.display = 'block';
-                                      inputFieldContainer7.style.display = 'block';
-                                      labelcontainer8.style.display = 'block';
-                                      inputFieldContainer8.style.display = 'block';
-                                      labelcontainer9.style.display = 'block';
-                                      inputFieldContainer9.style.display = 'block';
-                                      labelcontainer10.style.display = 'block';
-                                      inputFieldContainer10.style.display = 'block';
+                                  if (selecteditem == "1") {
+                                    setheading.style.display = 'block';
+                                    setheading.innerHTML = "Agensi / Anak Syarikat";
+                                    labelcontainer.style.display = 'block';
+                                    inputFieldContainer.style.display = 'block';
+                                    labelcontainer1.style.display = 'block';
+                                    inputFieldContainer1.style.display = 'block';
+                                    labelcontainer2.style.display = 'block';
+                                    inputFieldContainer2.style.display = 'block';
+                                    labelcontainer3.style.display = 'block';
+                                    inputFieldContainer3.style.display = 'block';
+                                    labelcontainer4.style.display = 'block';
+                                    inputFieldContainer4.style.display = 'block';
+                                    labelcontainer5.style.display = 'block';
+                                    inputFieldContainer5.style.display = 'block';
+                                    labelcontainer6.style.display = 'none';
+                                    inputFieldContainer6.style.display = 'none';
+                                    labelcontainer7.style.display = 'none';
+                                    inputFieldContainer7.style.display = 'none';
+                                    labelcontainer8.style.display = 'none';
+                                    inputFieldContainer8.style.display = 'none';
+                                    labelcontainer9.style.display = 'none';
+                                    inputFieldContainer9.style.display = 'none';
+                                    labelcontainer10.style.display = 'none';
+                                    inputFieldContainer10.style.display = 'none';
+                                  } else if (selecteditem == "2") {
+                                    setheading.style.display = 'block';
+                                    setheading.innerHTML = "Badan Berkanun";
+                                    labelcontainer.style.display = 'none';
+                                    inputFieldContainer.style.display = 'none';
+                                    labelcontainer1.style.display = 'none';
+                                    inputFieldContainer1.style.display = 'none';
+                                    labelcontainer2.style.display = 'none';
+                                    inputFieldContainer2.style.display = 'none';
+                                    labelcontainer3.style.display = 'none';
+                                    inputFieldContainer3.style.display = 'none';
+                                    labelcontainer4.style.display = 'none';
+                                    inputFieldContainer4.style.display = 'none';
+                                    labelcontainer5.style.display = 'none';
+                                    inputFieldContainer5.style.display = 'none';
+                                    labelcontainer6.style.display = 'block';
+                                    inputFieldContainer6.style.display = 'block';
+                                    labelcontainer7.style.display = 'block';
+                                    inputFieldContainer7.style.display = 'block';
+                                    labelcontainer8.style.display = 'block';
+                                    inputFieldContainer8.style.display = 'block';
+                                    labelcontainer9.style.display = 'block';
+                                    inputFieldContainer9.style.display = 'block';
+                                    labelcontainer10.style.display = 'block';
+                                    inputFieldContainer10.style.display = 'block';
 
-                                    } else {
-                                      setheading.style.display = 'none';
-                                      labelcontainer.style.display = 'none';
-                                      inputFieldContainer.style.display = 'none';
-                                      labelcontainer1.style.display = 'none';
-                                      inputFieldContainer1.style.display = 'none';
-                                      labelcontainer2.style.display = 'none';
-                                      inputFieldContainer2.style.display = 'none';
-                                      labelcontainer3.style.display = 'none';
-                                      inputFieldContainer3.style.display = 'none';
-                                      labelcontainer4.style.display = 'none';
-                                      inputFieldContainer4.style.display = 'none';
-                                      labelcontainer5.style.display = 'none';
-                                      inputFieldContainer5.style.display = 'none';
-                                      labelcontainer6.style.display = 'none';
-                                      inputFieldContainer6.style.display = 'none';
-                                      labelcontainer7.style.display = 'none';
-                                      inputFieldContainer7.style.display = 'none';
-                                      labelcontainer8.style.display = 'none';
-                                      inputFieldContainer8.style.display = 'none';
-                                      labelcontainer9.style.display = 'none';
-                                      inputFieldContainer5.style.display = 'none';
-                                      labelcontainer9.style.display = 'none';
-                                      inputFieldContainer9.style.display = 'none';
-                                      labelcontainer10.style.display = 'none';
-                                      inputFieldContainer10.style.display = 'none';
-                                    }
+                                  } else {
+                                    setheading.style.display = 'none';
+                                    labelcontainer.style.display = 'none';
+                                    inputFieldContainer.style.display = 'none';
+                                    labelcontainer1.style.display = 'none';
+                                    inputFieldContainer1.style.display = 'none';
+                                    labelcontainer2.style.display = 'none';
+                                    inputFieldContainer2.style.display = 'none';
+                                    labelcontainer3.style.display = 'none';
+                                    inputFieldContainer3.style.display = 'none';
+                                    labelcontainer4.style.display = 'none';
+                                    inputFieldContainer4.style.display = 'none';
+                                    labelcontainer5.style.display = 'none';
+                                    inputFieldContainer5.style.display = 'none';
+                                    labelcontainer6.style.display = 'none';
+                                    inputFieldContainer6.style.display = 'none';
+                                    labelcontainer7.style.display = 'none';
+                                    inputFieldContainer7.style.display = 'none';
+                                    labelcontainer8.style.display = 'none';
+                                    inputFieldContainer8.style.display = 'none';
+                                    labelcontainer9.style.display = 'none';
+                                    inputFieldContainer5.style.display = 'none';
+                                    labelcontainer9.style.display = 'none';
+                                    inputFieldContainer9.style.display = 'none';
+                                    labelcontainer10.style.display = 'none';
+                                    inputFieldContainer10.style.display = 'none';
                                   }
+                                }
 
-                                  function KiraBakiPinjamanPokokKerajaanNegeri() {
-                                    var BakiPinjamanPokokTahunSebelum = parseInt(document.getElementById('BakiPinjamanPokokKerajaanNegeri').value);
-                                    var BayaranPokokTahunan = parseInt(document.getElementById('PokokBayaranKerajaanNegeri').value);
-                                    var BayaranPokokBulanan = parseInt(document.getElementById('PokokBayaranBulananKerajaanNegeri').value);
+                                function KiraBakiPinjamanPokokKerajaanNegeri() {
+                                  var BakiPinjamanPokokTahunSebelum = parseInt(document.getElementById('BakiPinjamanPokokKerajaanNegeri').value);
+                                  var BayaranPokokTahunan = parseInt(document.getElementById('PokokBayaranKerajaanNegeri').value);
+                                  var BayaranPokokBulanan = parseInt(document.getElementById('PokokBayaranBulananKerajaanNegeri').value);
 
-                                    var result = BakiPinjamanPokokTahunSebelum - (BayaranPokokTahunan + BayaranPokokBulanan);
-                                    document.getElementById('BakiPinjamanPokokBaharuKerajaanNegeri').value = "RM " + result;
+                                  var result = BakiPinjamanPokokTahunSebelum - (BayaranPokokTahunan + BayaranPokokBulanan);
 
-                                  }
+                                  document.getElementById('BakiPinjamanPokokBaharuKerajaanNegeri').value = "RM " + result;
 
-                                  function KiraTunggakanPinjamanKerajaanNegeri() {
-                                    var BakiTunggakanPinjamanSemasa = parseInt(document.getElementById('BakiTunggakanKerajaanNegeri').value);
-                                    var PokokBakiTunggakanKerajaanNegeri = parseInt(document.getElementById('PokokBakiTunggakanKerajaanNegeri').value);
-                                    var FaedahBakiTunggakanKerajaanNegeri = parseInt(document.getElementById('FaedahBakiTunggakanKerajaanNegeri').value);
+                                }
 
-
-                                    var addTunggakan = PokokBakiTunggakanKerajaanNegeri + FaedahBakiTunggakanKerajaanNegeri;
-                                    var JumlahBakiTunggakanKerajaanNegeri = BakiTunggakanPinjamanSemasa + addTunggakan;
-                                    document.getElementById('BakiTunggakanBaharuKerajaanNegeri').value = 'RM ' + JumlahBakiTunggakanKerajaanNegeri;
-                                  }
-
-                                  function KiraBakiPinjamanPokokPersekutuan() {
-                                    var BakiPinjamanPokokTahunSebelum = parseInt(document.getElementById('BakiPinjamanPokokPersekutuan').value);
-                                    var BayaranPokokTahunan = parseInt(document.getElementById('PokokBayaranPersekutuan').value);
-                                    var BayaranPokokBulanan = parseInt(document.getElementById('PokokBayaranBulananPersekutuan').value);
-
-                                    var result = BakiPinjamanPokokTahunSebelum - (BayaranPokokTahunan + BayaranPokokBulanan);
-                                    document.getElementById('BakiPinjamanPokokBaharuPersekutuan').value = "RM " + result;
-
-                                  }
-
-                                  function KiraTunggakanPinjamanPersekutuan() {
-                                    var BakiTunggakanPinjamanSemasa = parseInt(document.getElementById('BakiTunggakanPersekutuan').value);
-                                    var PokokBakiTunggakanPersekutuan = parseInt(document.getElementById('PokokTunggakanPersekutuan').value);
-                                    var FaedahBakiTunggakanPersekutuan = parseInt(document.getElementById('FaedahTunggakanPersekutuan').value);
+                                function KiraTunggakanPinjamanKerajaanNegeri() {
+                                  var BakiTunggakanPinjamanSemasa = parseInt(document.getElementById('BakiTunggakanKerajaanNegeri').value);
+                                  var PokokBakiTunggakanKerajaanNegeri = parseInt(document.getElementById('PokokBakiTunggakanKerajaanNegeri').value);
+                                  var FaedahBakiTunggakanKerajaanNegeri = parseInt(document.getElementById('FaedahBakiTunggakanKerajaanNegeri').value);
 
 
-                                    var addTunggakan = PokokBakiTunggakanPersekutuan + FaedahBakiTunggakanPersekutuan;
-                                    var JumlahBakiTunggakanPersekutuan = BakiTunggakanPinjamanSemasa + addTunggakan;
-                                    document.getElementById('JumlahTunggakanPersekutuan').value = 'RM ' + JumlahBakiTunggakanPersekutuan;
-                                  }
+                                  var addTunggakan = PokokBakiTunggakanKerajaanNegeri + FaedahBakiTunggakanKerajaanNegeri;
+                                  var JumlahBakiTunggakanKerajaanNegeri = BakiTunggakanPinjamanSemasa + addTunggakan;
+                                  
+                                  document.getElementById('BakiTunggakanBaharuKerajaanNegeri').value = 'RM ' + JumlahBakiTunggakanKerajaanNegeri;
+                                }
 
-                                  function KiraJumlahSemasaKerajaanNegeri() {
-                                    var PokokBayaranSehingga = parseInt(document.getElementById('PokokBayaranKerajaanNegeri').value);
-                                    var FaedahBayaranSehingga = parseInt(document.getElementById('FaedahBayaranKerajaanNegeri').value);
-                                    var result = PokokBayaranSehingga + FaedahBayaranSehingga;
+                                function KiraBakiPinjamanPokokPersekutuan() {
+                                  var BakiPinjamanPokokTahunSebelum = parseInt(document.getElementById('BakiPinjamanPokokPersekutuan').value);
+                                  var BayaranPokokTahunan = parseInt(document.getElementById('PokokBayaranPersekutuan').value);
+                                  var BayaranPokokBulanan = parseInt(document.getElementById('PokokBayaranBulananPersekutuan').value);
 
-                                    document.getElementById('JumlahBayaranKerajaanNegeri').value = 'RM ' + result;
-                                  }
+                                  var result = BakiPinjamanPokokTahunSebelum - (BayaranPokokTahunan + BayaranPokokBulanan);
+                                  document.getElementById('BakiPinjamanPokokBaharuPersekutuan').value = "RM " + result;
 
-                                  function KiraJumlahTahunanKerajaanNegeri() {
-                                    var PokokBayaranTahunan = parseInt(document.getElementById('PokokBayaranBulananKerajaanNegeri').value);
-                                    var FaedahBayaranTahunan = parseInt(document.getElementById('FaedahBayaranBulananKerajaanNegeri').value);
-                                    var result = PokokBayaranTahunan + FaedahBayaranTahunan;
+                                }
 
-                                    document.getElementById('JumlahBayaranBulananKerajaanNegeri').value = 'RM ' + result;
-                                  }
+                                function KiraTunggakanPinjamanPersekutuan() {
+                                  var BakiTunggakanPinjamanSemasa = parseInt(document.getElementById('BakiTunggakanPersekutuan').value);
+                                  var PokokBakiTunggakanPersekutuan = parseInt(document.getElementById('PokokTunggakanPersekutuan').value);
+                                  var FaedahBakiTunggakanPersekutuan = parseInt(document.getElementById('FaedahTunggakanPersekutuan').value);
 
-                                  function KiraJumlahSemasaPersekutuan() {
-                                    var PokokBayaranSehingga = parseInt(document.getElementById('PokokBayaranPersekutuan').value);
-                                    var FaedahBayaranSehingga = parseInt(document.getElementById('FaedahBayaranPersekutuan').value);
-                                    var result = PokokBayaranSehingga + FaedahBayaranSehingga;
 
-                                    document.getElementById('JumlahBayaranPersekutuan').value = 'RM ' + result;
-                                  }
+                                  var addTunggakan = PokokBakiTunggakanPersekutuan + FaedahBakiTunggakanPersekutuan;
+                                  var JumlahBakiTunggakanPersekutuan = BakiTunggakanPinjamanSemasa + addTunggakan;
+                                  document.getElementById('BakiTunggakanBaharuPersekutuan').value = 'RM ' + JumlahBakiTunggakanPersekutuan;
+                                }
 
-                                  function KiraJumlahTahunanPersekutuan() {
-                                    var PokokBayaranTahunan = parseInt(document.getElementById('PokokBayaranBulananPersekutuan').value);
-                                    var FaedahBayaranTahunan = parseInt(document.getElementById('FaedahBayaranBulananPersekutuan').value);
-                                    var result = PokokBayaranTahunan + FaedahBayaranTahunan;
+                                function KiraJumlahSemasaKerajaanNegeri() {
+                                  var PokokBayaranSehingga = parseInt(document.getElementById('PokokBayaranKerajaanNegeri').value);
+                                  var FaedahBayaranSehingga = parseInt(document.getElementById('FaedahBayaranKerajaanNegeri').value);
+                                  var result = PokokBayaranSehingga + FaedahBayaranSehingga;
 
-                                    document.getElementById('JumlahBayaranBulananPersekutuan').value = 'RM ' + result;
-                                  }
+                                  document.getElementById('JumlahBayaranKerajaanNegeri').value = 'RM ' + result;
+                                }
 
-                                  function KiraSumbanganPendapatan() {
-                                    var JumlahPendapatan = parseInt(document.getElementById('JumlahPendapatanKerajaanNegeri').value);
-                                    var result = JumlahPendapatan * 0.02;
-                                    document.getElementById('AmaunSumbanganPendapatan').value = 'RM ' + result;
-                                  }
+                                function KiraJumlahTahunanKerajaanNegeri() {
+                                  var PokokBayaranTahunan = parseInt(document.getElementById('PokokBayaranBulananKerajaanNegeri').value);
+                                  var FaedahBayaranTahunan = parseInt(document.getElementById('FaedahBayaranBulananKerajaanNegeri').value);
+                                  var result = PokokBayaranTahunan + FaedahBayaranTahunan;
 
-                                  function KiraSumbanganKeuntungan() {
-                                    var JumlahKeuntungan = parseInt(document.getElementById('JumlahKeuntunganProjek').value);
-                                    var result = JumlahKeuntungan * 0.10;
-                                    document.getElementById('AmaunSumbanganKeuntungan').value = result;
-                                  }
+                                  document.getElementById('JumlahBayaranBulananKerajaanNegeri').value = 'RM ' + result;
+                                }
 
-                                  function addNewRow() {
+                                function KiraJumlahSemasaPersekutuan() {
+                                  var PokokBayaranSehingga = parseInt(document.getElementById('PokokBayaranPersekutuan').value);
+                                  var FaedahBayaranSehingga = parseInt(document.getElementById('FaedahBayaranPersekutuan').value);
+                                  var result = PokokBayaranSehingga + FaedahBayaranSehingga;
 
-                                    table.row
-                                            .add([
-                                              counter,
-                                              '<input type="text" class="form-control">',
-                                              '<select class="form-select" aria-label="Default select example" required><option value="bangunan">Bangunan</option><option value="Tanah">Tanah</option><option value="Perkhidmatan">Perkhidmatan</option></select>',
-                                              '<input type="text" class="form-control">'
-                                            ])
-                                            .draw(false);
+                                  document.getElementById('JumlahBayaranPersekutuan').value = 'RM ' + result;
+                                }
 
-                                    counter++;
-                                  }
-                                  let counter = 1;
-                                  document.querySelector('#addRowSemasa').addEventListener('click', addNewRow);
+                                function KiraJumlahTahunanPersekutuan() {
+                                  var PokokBayaranTahunan = parseInt(document.getElementById('PokokBayaranBulananPersekutuan').value);
+                                  var FaedahBayaranTahunan = parseInt(document.getElementById('FaedahBayaranBulananPersekutuan').value);
+                                  var result = PokokBayaranTahunan + FaedahBayaranTahunan;
 
-                                  function addNewRow1() {
+                                  document.getElementById('JumlahBayaranBulananPersekutuan').value = 'RM ' + result;
+                                }
 
-                                    table1.row
-                                            .add([
-                                              counter1,
-                                              '<input type="text" class="form-control">',
-                                              '<select class="form-select" aria-label="Default select example" required><option value="bangunan">Bangunan</option><option value="Tanah">Tanah</option><option value="Perkhidmatan">Perkhidmatan</option></select>',
-                                              '<input type="text" class="form-control">'
-                                            ])
-                                            .draw(false);
+                                function KiraJumlahTunggakanKerajaanNegeri() {
+                                  var PokokTunggakan = parseInt(document.getElementById('PokokBakiTunggakanKerajaanNegeri').value);
+                                  var FaedahTunggakan = parseInt(document.getElementById('FaedahBakiTunggakanKerajaanNegeri').value);
+                                  var result = PokokTunggakan + FaedahTunggakan;
 
-                                    counter1++;
-                                  }
-                                  let counter1 = 1;
-                                  document.querySelector('#addRowTetap').addEventListener('click', addNewRow1);
+                                  document.getElementById('JumlahTunggakanKerajaanNegeri').value = 'RM ' + result;
+                                }
 
-                                  function addNewRow2() {
+                                function KiraJumlahTunggakanPersekutuan() {
+                                  var PokokTunggakan = parseInt(document.getElementById('PokokTunggakanPersekutuan').value);
+                                  var FaedahTunggakan = parseInt(document.getElementById('FaedahTunggakanPersekutuan').value);
+                                  var result = PokokTunggakan + FaedahTunggakan;
 
-                                    table2.row
-                                            .add([
-                                              counter2,
-                                              '<input type="text" class="form-control">',
-                                              '<select class="form-select" aria-label="Default select example" required><option value="bangunan">Bangunan</option><option value="Tanah">Tanah</option><option value="Perkhidmatan">Perkhidmatan</option></select>',
-                                              '<input type="text" class="form-control">'
-                                            ])
-                                            .draw(false);
+                                  document.getElementById('JumlahTunggakanPersekutuan').value = 'RM ' + result;
+                                }
 
-                                    counter2++;
-                                  }
-                                  let counter2 = 1;
-                                  document.querySelector('#addRowPanjang').addEventListener('click', addNewRow2);
+                                function KiraSumbanganPendapatan() {
+                                  var JumlahPendapatan = parseInt(document.getElementById('JumlahPendapatanKerajaanNegeri').value);
+                                  var result = JumlahPendapatan * 0.02;
+                                  document.getElementById('AmaunSumbanganPendapatan').value = 'RM ' + result;
+                                }
 
-                                  function addNewRow3() {
+                                function KiraSumbanganKeuntungan() {
+                                  var JumlahKeuntungan = parseInt(document.getElementById('JumlahKeuntunganProjek').value);
+                                  var result = JumlahKeuntungan * 0.10;
+                                  document.getElementById('AmaunSumbanganKeuntungan').value = result;
+                                }
 
-                                    table3.row
-                                            .add([
-                                              counter3,
-                                              '<input type="text" class="form-control">',
-                                              '<select class="form-select" aria-label="Default select example" required><option value="bangunan">Bangunan</option><option value="Tanah">Tanah</option><option value="Perkhidmatan">Perkhidmatan</option></select>',
-                                              '<input type="text" class="form-control">'
-                                            ])
-                                            .draw(false);
+                                function addNewRow() {
 
-                                    counter3++;
-                                  }
-                                  let counter3 = 1;
-                                  document.querySelector('#addRowPendek').addEventListener('click', addNewRow3);
+                                  table.row
+                                          .add([
+                                            counter,
+                                            '<input type="text" class="form-control">',
+                                            '<select class="form-select" aria-label="Default select example" required><option value="bangunan">Bangunan</option><option value="Tanah">Tanah</option><option value="Perkhidmatan">Perkhidmatan</option></select>',
+                                            '<input type="text" class="form-control">'
+                                          ])
+                                          .draw(false);
 
-                                  function submitForm() {
-                                    document.getElementById("registration").submit();
-                                  }
+                                  counter++;
+                                }
+                                let counter = 1;
+                                document.querySelector('#addRowSemasa').addEventListener('click', addNewRow);
+
+                                function addNewRow1() {
+
+                                  table1.row
+                                          .add([
+                                            counter1,
+                                            '<input type="text" class="form-control">',
+                                            '<select class="form-select" aria-label="Default select example" required><option value="bangunan">Bangunan</option><option value="Tanah">Tanah</option><option value="Perkhidmatan">Perkhidmatan</option></select>',
+                                            '<input type="text" class="form-control">'
+                                          ])
+                                          .draw(false);
+
+                                  counter1++;
+                                }
+                                let counter1 = 1;
+                                document.querySelector('#addRowTetap').addEventListener('click', addNewRow1);
+
+                                function addNewRow2() {
+
+                                  table2.row
+                                          .add([
+                                            counter2,
+                                            '<input type="text" class="form-control">',
+                                            '<select class="form-select" aria-label="Default select example" required><option value="bangunan">Bangunan</option><option value="Tanah">Tanah</option><option value="Perkhidmatan">Perkhidmatan</option></select>',
+                                            '<input type="text" class="form-control">'
+                                          ])
+                                          .draw(false);
+
+                                  counter2++;
+                                }
+                                let counter2 = 1;
+                                document.querySelector('#addRowPanjang').addEventListener('click', addNewRow2);
+
+                                function addNewRow3() {
+
+                                  table3.row
+                                          .add([
+                                            counter3,
+                                            '<input type="text" class="form-control">',
+                                            '<select class="form-select" aria-label="Default select example" required><option value="bangunan">Bangunan</option><option value="Tanah">Tanah</option><option value="Perkhidmatan">Perkhidmatan</option></select>',
+                                            '<input type="text" class="form-control">'
+                                          ])
+                                          .draw(false);
+
+                                  counter3++;
+                                }
+                                let counter3 = 1;
+                                document.querySelector('#addRowPendek').addEventListener('click', addNewRow3);
+
+                                function submitForm() {
+                                  document.getElementById("registration").submit();
+                                }
     </script>
 
   </body>
