@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 18, 2023 at 10:58 AM
+-- Generation Time: Aug 21, 2023 at 08:44 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -71,7 +71,7 @@ CREATE TABLE `asettetapagensi` (
 --
 
 CREATE TABLE `infoagensi` (
-  `ID` int(11) NOT NULL,
+  `ID` int(100) NOT NULL,
   `NamaAgensi` varchar(100) DEFAULT NULL,
   `AlamatAgensi` varchar(100) DEFAULT NULL,
   `NamaHubungiAgensi` varchar(100) DEFAULT NULL,
@@ -87,51 +87,53 @@ CREATE TABLE `infoagensi` (
   `PerancanganPerniagaan` longblob DEFAULT NULL,
   `CartaOrganisasi` longblob DEFAULT NULL,
   `CartaAhliPerlembagaanPengarah` longblob DEFAULT NULL,
-  `TarikhPelantikan` date DEFAULT NULL,
-  `PinjamanAsalKN` varchar(100) NOT NULL,
-  `TarikhBakiPinjamanPokokKN` date NOT NULL,
-  `BakiPinjamanPokokKN` varchar(100) NOT NULL,
-  `TarikhBayaranSehinggaKN` date NOT NULL,
-  `PokokBayaranSehinggaKN` varchar(100) NOT NULL,
-  `FaedahBayaranSehinggaKN` varchar(100) NOT NULL,
-  `JumlahBayaranSehinggaKN` varchar(100) NOT NULL,
-  `TarikhBayaranBulananKN` date NOT NULL,
-  `PokokBayaranBulananKN` varchar(100) NOT NULL,
-  `FaedahBayaranBulananKN` varchar(100) NOT NULL,
-  `JumlahBayaranBulananKN` varchar(100) NOT NULL,
-  `BakiPinjamanPokokBaharuKN` varchar(100) NOT NULL,
-  `TarikhTunggakanSehinggaKN` date NOT NULL,
-  `BakiTunggakanSemasaKN` varchar(100) NOT NULL,
-  `TarikhTunggakanSemasaKN` date NOT NULL,
-  `PokokTunggakanSemasaKN` varchar(100) NOT NULL,
-  `FaedahTunggakanSemasaKN` varchar(100) NOT NULL,
-  `BakiTunggakanBaharuKN` varchar(100) NOT NULL,
-  `PinjamanAsalP` varchar(100) NOT NULL,
-  `TarikhBakiPinjamanPokokP` date NOT NULL,
-  `BakiPinjamanPokokP` varchar(100) NOT NULL,
-  `TarikhBayaranSehinggaP` date NOT NULL,
-  `PokokBayaranSehinggaP` varchar(100) NOT NULL,
-  `FaedahBayaranSehinggaP` varchar(100) NOT NULL,
-  `JumlahBayaranSehinggaP` varchar(100) NOT NULL,
-  `TarikhBayaranBulananP` date NOT NULL,
-  `PokokBayaranBulananP` varchar(100) NOT NULL,
-  `FaedahBayaranBulananP` varchar(100) NOT NULL,
-  `JumlahBayaranBulananP` varchar(100) NOT NULL,
-  `BakiPinjamanPokokBaharuP` varchar(100) NOT NULL,
-  `TarikhTunggakanSehinggaP` date NOT NULL,
-  `BakiTunggakanSemasaP` varchar(100) NOT NULL,
-  `TarikhTunggakanSemasaP` date NOT NULL,
-  `PokokTunggakanSemasaP` varchar(100) NOT NULL,
-  `FaedahTunggakanSemasaP` varchar(100) NOT NULL,
-  `JumlahTunggakanBaharuP` varchar(100) NOT NULL,
-  `JumlahPendapatanSemasaDP` varchar(100) NOT NULL,
-  `TarikhSumbanganDP` date NOT NULL,
-  `AmaunSumbanganDP` varchar(100) NOT NULL,
-  `BuktiSumbanganDP` longblob NOT NULL,
-  `JumlahKeuntunganSemasaSP` varchar(100) NOT NULL,
-  `TarikhSumbanganSP` date NOT NULL,
-  `AmaunSumbanganSP` varchar(100) NOT NULL,
-  `BuktiSumbanganSP` longblob NOT NULL
+  `TarikhPelantikan` varchar(100) DEFAULT NULL,
+  `PinjamanAsalKN` varchar(100) DEFAULT NULL,
+  `TarikhBakiPinjamanPokokKN` varchar(100) DEFAULT NULL,
+  `BakiPinjamanPokokKN` varchar(100) DEFAULT NULL,
+  `TarikhBayaranSehinggaKN` varchar(100) DEFAULT NULL,
+  `PokokBayaranSehinggaKN` varchar(100) DEFAULT NULL,
+  `FaedahBayaranSehinggaKN` varchar(100) DEFAULT NULL,
+  `JumlahBayaranSehinggaKN` varchar(100) DEFAULT NULL,
+  `TarikhBayaranBulananKN` varchar(100) DEFAULT NULL,
+  `PokokBayaranBulananKN` varchar(100) DEFAULT NULL,
+  `FaedahBayaranBulananKN` varchar(100) DEFAULT NULL,
+  `JumlahBayaranBulananKN` varchar(100) DEFAULT NULL,
+  `BakiPinjamanPokokBaharuKN` varchar(100) DEFAULT NULL,
+  `TarikhTunggakanSehinggaKN` varchar(100) DEFAULT NULL,
+  `BakiTunggakanSemasaKN` varchar(100) DEFAULT NULL,
+  `TarikhTunggakanSemasaKN` varchar(100) DEFAULT NULL,
+  `PokokTunggakanSemasaKN` varchar(100) DEFAULT NULL,
+  `FaedahTunggakanSemasaKN` varchar(100) DEFAULT NULL,
+  `JumlahTunggakanKN` varchar(100) DEFAULT NULL,
+  `BakiTunggakanBaharuKN` varchar(100) DEFAULT NULL,
+  `PinjamanAsalP` varchar(100) DEFAULT NULL,
+  `TarikhBakiPinjamanPokokP` varchar(100) DEFAULT NULL,
+  `BakiPinjamanPokokP` varchar(100) DEFAULT NULL,
+  `TarikhBayaranSehinggaP` varchar(100) DEFAULT NULL,
+  `PokokBayaranSehinggaP` varchar(100) DEFAULT NULL,
+  `FaedahBayaranSehinggaP` varchar(100) DEFAULT NULL,
+  `JumlahBayaranSehinggaP` varchar(100) DEFAULT NULL,
+  `TarikhBayaranBulananP` varchar(100) DEFAULT NULL,
+  `PokokBayaranBulananP` varchar(100) DEFAULT NULL,
+  `FaedahBayaranBulananP` varchar(100) DEFAULT NULL,
+  `JumlahBayaranBulananP` varchar(100) DEFAULT NULL,
+  `BakiPinjamanPokokBaharuP` varchar(100) DEFAULT NULL,
+  `TarikhTunggakanSehinggaP` varchar(100) DEFAULT NULL,
+  `BakiTunggakanSemasaP` varchar(100) DEFAULT NULL,
+  `TarikhTunggakanSemasaP` varchar(100) DEFAULT NULL,
+  `PokokTunggakanSemasaP` varchar(100) DEFAULT NULL,
+  `FaedahTunggakanSemasaP` varchar(100) DEFAULT NULL,
+  `JumlahTunggakanP` varchar(100) DEFAULT NULL,
+  `BakiTunggakanBaharuP` varchar(100) DEFAULT NULL,
+  `JumlahPendapatanSemasaDP` varchar(100) DEFAULT NULL,
+  `TarikhSumbanganDP` varchar(100) DEFAULT NULL,
+  `AmaunSumbanganDP` varchar(100) DEFAULT NULL,
+  `BuktiSumbanganDP` longblob DEFAULT NULL,
+  `JumlahKeuntunganSemasaSP` varchar(100) DEFAULT NULL,
+  `TarikhSumbanganSP` varchar(100) DEFAULT NULL,
+  `AmaunSumbanganSP` varchar(100) DEFAULT NULL,
+  `BuktiSumbanganSP` longblob DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -250,7 +252,7 @@ ALTER TABLE `asettetapagensi`
 -- AUTO_INCREMENT for table `infoagensi`
 --
 ALTER TABLE `infoagensi`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(100) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `liabilitipanjang`
