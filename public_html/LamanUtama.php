@@ -1,4 +1,7 @@
+<?php
+include('login.php');
 
+?>
 <!DOCTYPE html>
 <!--
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -60,7 +63,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#!">Logout</a></li>
+            <li><a class="dropdown-item" href="logout.php">Logout</a></li>
           </ul>
         </li>
       </ul>
@@ -170,7 +173,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                   <div class="card-body">
                     <div class="row">
                       <div class="col">
-                        <label class="col col-form-label">Selamat Datang </label>
+                        <label class="col col-form-label">Selamat Datang <i><?php echo $_SESSION['login_user']=$username; ?></i> </label>
                       </div>
                     </div>
                     

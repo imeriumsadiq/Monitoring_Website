@@ -1,4 +1,6 @@
 <?php
+
+
 // Connect to the database
 $conn = mysqli_connect("localhost", "root", "", "sistempemantauanagensi");
 
@@ -20,24 +22,24 @@ if ($conn) {
     // Check if the query was successful
     if (mysqli_num_rows($result) == 1) {
         // Display a success message or redirect to a new page after successful login
-        
+
         header("Location: LamanUtama.php");
         exit();
     } else {
         // Display an error message
-        $errors["login"] = "Invalid username or password";
+        echo "Invalid username or password";
     }
-	$sqladmin = "SELECT * FROM adminagensi WHERE Emel='$username' AND KataLaluan='$password'";
-	$result1 = mysqli_query($conn, $sqladmin);
-	
-	if (mysqli_num_rows($result1) == 1) {
-        // Display a success message or redirect to a new page after successful login
-        header("Location: LamanUtama.php");
-        exit();
-    } else {
-        // Display an error message
-        $errors["login"] = "Invalid username or password";
-    }
+//	$sqladmin = "SELECT * FROM adminagensi WHERE Emel='$username' AND KataLaluan='$password'";
+//	$result1 = mysqli_query($conn, $sqladmin);
+//	
+//	if (mysqli_num_rows($result1) == 1) {
+//        // Display a success message or redirect to a new page after successful login
+//        header("Location: LamanUtama.php");
+//        exit();
+//    } else {
+//        // Display an error message
+//        //echo "Invalid username or password";
+//    }
 }
 
 // Close the database connection
