@@ -1,6 +1,5 @@
 <?php
-include('login.php');
-
+include 'login.php';
 ?>
 <!DOCTYPE html>
 <!--
@@ -173,13 +172,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                   <div class="card-body">
                     <div class="row">
                       <div class="col">
-                        <label class="col col-form-label">Selamat Datang <i><?php echo $_SESSION['login_user']=$username; ?></i> </label>
+                        <label class="col col-form-label">Selamat Datang <?php echo $_SESSION['nama']?> </label>
                       </div>
                     </div>
                     
                     <div class="row">
                       <div class="col">
-                        <label class="col col-form-label">Log Masuk Terakhir Pada </label>
+                        <label class="col col-form-label">Log Masuk Terakhir Pada <?php echo $_SESSION['login_time']?> </label>
                       </div>
                     </div>
                     

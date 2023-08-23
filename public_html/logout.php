@@ -7,6 +7,6 @@
 session_start();
 if(session_destroy()) // Destroying All Sessions
 {
-header("Location: Login_Page.html"); // Redirecting To Home Page
+header("Location: Login_Page.php"); // Redirecting To Home Page
 }
 ?>
