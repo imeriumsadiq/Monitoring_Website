@@ -86,8 +86,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
               <div class="collapse" id="collapseAgensi" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                 <nav class="sb-sidenav-menu-nested nav">
                   <a class="nav-link" href="Agensi_Daftar.php">Daftar Agensi / Anak Syarikat / Badan Berkanun</a>
-                  <a class="nav-link" href="Agensi_Senarai.html">Senarai Agensi / Anak Syarikat / Badan Berkanun</a>
-                  <a class ="nav-link" href="Carian.html">Carian</a>
+                  <a class="nav-link" href="Agensi_Senarai.php">Senarai Agensi / Anak Syarikat / Badan Berkanun</a>
+                  <a class ="nav-link" href="Carian.php">Carian</a>
                 </nav>
               </div>
               <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLaporan" aria-expanded="false" aria-controls="collapseLaporan">
@@ -97,7 +97,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
               </a>
               <div class="collapse" id="collapseLaporan" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                 <nav class="sb-sidenav-menu-nested nav">
-                  <a class="nav-link" href="Laporan.html">Laporan</a>
+                  <a class="nav-link" href="Laporan.php">Laporan</a>
 
                 </nav>
               </div>

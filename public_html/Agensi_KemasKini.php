@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <!--
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -15,6 +16,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
     <link href="css/styles.css" rel="stylesheet" />
     <link href="css/main.css" rel="stylesheet" />
   </head>
+
   <body class=sb-nav-fixed>
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
       <!-- Navbar Brand-->
@@ -280,7 +282,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                             <div class="row">
                               <div class="col">
                                 <label for="BakiPinjamanPokok" class="col col-form-label"  >Baki Pinjaman Pokok</label>
-                                <input type="text" class="form-control" id="BakiPinjamanPokokKerajaanNegeri" name="BakiPinjamanPokokKerajaanNegeri" onkeyup="KiraBakiPinjamanPokokKerajaanNegeri()">
+                                <input type="text" class="form-control" id="BakiPinjamanPokokKerajaanNegeri" name="BakiPinjamanPokokKerajaanNegeri" onkeyup="CommaThousand(); KiraBakiPinjamanPokokKerajaanNegeri()">
                               </div>
                             </div>
                             <br>
@@ -300,14 +302,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                             <div class="row">
                               <div class="col">
                                 <label for="PokokBayaranSehingga" class="col col-form-label"  >Pokok </label>
-                                <input type="text" class="form-control" id="PokokBayaranKerajaanNegeri" name="PokokBayaranKerajaanNegeri" onkeyup="KiraBakiPinjamanPokokKerajaanNegeri(); KiraJumlahSemasaKerajaanNegeri()">
+                                <input type="text" class="form-control" id="PokokBayaranKerajaanNegeri" name="PokokBayaranKerajaanNegeri" onkeyup="CommaThousand(); KiraBakiPinjamanPokokKerajaanNegeri(); KiraJumlahSemasaKerajaanNegeri()">
                               </div>
 
                             </div>
                             <div class="row">
                               <div class="col">
                                 <label for="FaedahBayaranSehingga" class="col col-form-label">Faedah </label>
-                                <input type="text" class="form-control" id="FaedahBayaranKerajaanNegeri" name="FaedahBayaranKerajaanNegeri" onkeyup="KiraJumlahSemasaKerajaanNegeri()">
+                                <input type="text" class="form-control" id="FaedahBayaranKerajaanNegeri" name="FaedahBayaranKerajaanNegeri" onkeyup="CommaThousand(); KiraJumlahSemasaKerajaanNegeri()">
                               </div>
                             </div>
                             <div class="row">
@@ -332,14 +334,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                             <div class="row">
                               <div class="col">
                                 <label class="col col-form-label">Pokok </label>
-                                <input type="text" class="form-control" id="PokokBayaranBulananKerajaanNegeri" name="PokokBayaranBulananKerajaanNegeri" onkeyup="KiraBakiPinjamanPokokKerajaanNegeri(); KiraJumlahTahunanKerajaanNegeri()">
+                                <input type="text" class="form-control" id="PokokBayaranBulananKerajaanNegeri" name="PokokBayaranBulananKerajaanNegeri" onkeyup="CommaThousand(); KiraBakiPinjamanPokokKerajaanNegeri(); KiraJumlahTahunanKerajaanNegeri()">
                               </div>
                             </div>
 
                             <div class="row">
                               <div class="col">
                                 <label class="col col-form-label">Faedah </label>
-                                <input type="text" class="form-control" id="FaedahBayaranBulananKerajaanNegeri" name="FaedahBayaranBulananKerajaanNegeri" onkeyup="KiraJumlahTahunanKerajaanNegeri()">
+                                <input type="text" class="form-control" id="FaedahBayaranBulananKerajaanNegeri" name="FaedahBayaranBulananKerajaanNegeri" onkeyup="CommaThousand(); KiraJumlahTahunanKerajaanNegeri()">
                               </div>
                             </div>
                             <div class="row">
@@ -376,7 +378,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                             <div class="row">
                               <div class="col">
                                 <label for="BakiTunggakanSebelum" class="col col-form-label">Baki Tunggakan Semasa</label>
-                                <input type="text" class="form-control" id="BakiTunggakanKerajaanNegeri" name="BakiTunggakanKerajaanNegeri" onkeyup="KiraTunggakanPinjamanKerajaanNegeri()">
+                                <input type="text" class="form-control" id="BakiTunggakanKerajaanNegeri" name="BakiTunggakanKerajaanNegeri" onkeyup="CommaThousand(); KiraTunggakanPinjamanKerajaanNegeri()">
                               </div>
                             </div>
 
@@ -390,14 +392,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                             <div class="row">
                               <div class="col">
                                 <label for="Pokok" class="col col-form-label">Pokok</label>
-                                <input type="text" class="form-control" id="PokokBakiTunggakanKerajaanNegeri" name="PokokBakiTunggakanKerajaanNegeri" onkeyup="KiraTunggakanPinjamanKerajaanNegeri();KiraJumlahTunggakanKerajaanNegeri()">
+                                <input type="text" class="form-control" id="PokokBakiTunggakanKerajaanNegeri" name="PokokBakiTunggakanKerajaanNegeri" onkeyup="CommaThousand(); KiraTunggakanPinjamanKerajaanNegeri();KiraJumlahTunggakanKerajaanNegeri()">
                               </div>
                             </div>
 
                             <div class="row">
                               <div class="col">
                                 <label for="Faedah" class="col col-form-label">Faedah</label>
-                                <input type="text" class="form-control" id="FaedahBakiTunggakanKerajaanNegeri" name="FaedahBakiTunggakanKerajaanNegeri" onkeyup="KiraTunggakanPinjamanKerajaanNegeri();KiraJumlahTunggakanKerajaanNegeri()">
+                                <input type="text" class="form-control" id="FaedahBakiTunggakanKerajaanNegeri" name="FaedahBakiTunggakanKerajaanNegeri" onkeyup="CommaThousand(); KiraTunggakanPinjamanKerajaanNegeri();KiraJumlahTunggakanKerajaanNegeri()">
                               </div>
                             </div>
 
@@ -921,24 +923,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                                   }
                                 }
 
-                                function numberWithCommas(x) {
-                                  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                                }
-
                                 function KiraBakiPinjamanPokokKerajaanNegeri() {
-                                  var input = document.getElementById('BakiPinjamanPokokKerajaanNegeri').value;
-                                  var input1 = document.getElementById('PokokBayaranKerajaanNegeri').value;
-                                  var input2 = document.getElementById('PokokBayaranBulananKerajaanNegeri').value;
-
-                                  var BakiPinjamanPokokTahunSebelum = parseInt(input.replace(/,/g, ''));
-                                  var BayaranPokokTahunan = parseInt(input1.replace(/,/g, ''));
-                                  var BayaranPokokBulanan = parseInt(input2.replace(/,/g, ''));
+                                  var BakiPinjamanPokokTahunSebelum = parseInt(document.getElementById('BakiPinjamanPokokKerajaanNegeri').value);
+                                  var BayaranPokokTahunan = parseInt(document.getElementById('PokokBayaranKerajaanNegeri').value);
+                                  var BayaranPokokBulanan = parseInt(document.getElementById('PokokBayaranBulananKerajaanNegeri').value);
 
                                   var result = BakiPinjamanPokokTahunSebelum - (BayaranPokokTahunan + BayaranPokokBulanan);
-                                  var formattedResult = numberWithCommas(result.toFixed(3));
+                                  var str = result.toString();
 
-
-                                  document.getElementById('BakiPinjamanPokokBaharuKerajaanNegeri').value = "RM " + formattedResult;
+                                  document.getElementById('BakiPinjamanPokokBaharuKerajaanNegeri').value = "RM " + str;
 
                                 }
 
@@ -1049,60 +1042,60 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                                 function CommaThousand() {
                                   var input = document.getElementById('PinjamanAsalKerajaanNegeri');
                                   var value = input.value.replace(/,/g, '');
-//                                var input1 = document.getElementById('BakiPinjamanPokokKerajaanNegeri');
-//                                var value1 = input1.value.replace(/,/g, '');
-//                                var input2 = document.getElementById('PokokBayaranKerajaanNegeri');
-//                                var value2 = input2.value.replace(/,/g, '');
-//                                var input3 = document.getElementById('FaedahBayaranKerajaanNegeri');
-//                                var value3 = input3.value.replace(/,/g, '');
-//                                var input4 = document.getElementById('JumlahBayaranKerajaanNegeri');
-//                                var value4 = input4.value.replace(/,/g, '');
-//                                var input5 = document.getElementById('PokokBayaranBulananKerajaanNegeri');
-//                                var value5 = input5.value.replace(/,/g, '');
-//                                var input6 = document.getElementById('FaedahBayaranBulananKerajaanNegeri');
-//                                var value6 = input6.value.replace(/,/g, '');
-//                                var input7 = document.getElementById('JumlahBayaranBulananKerajaanNegeri');
-//                                var value7 = input7.value.replace(/,/g, '');
-//                                var input8 = document.getElementById('BakiPinjamanPokokBaharuKerajaanNegeri');
-//                                var value8 = input8.value.replace(/,/g, '');
-//                                var input9 = document.getElementById('BakiTunggakanKerajaanNegeri');
-//                                var value9 = input9.value.replace(/,/g, '');
-//                                var input10 = document.getElementById('PokokBakiTunggakanKerajaanNegeri');
-//                                var value10 = input10.value.replace(/,/g, '');
-//                                var input11 = document.getElementById('FaedahBakiTunggakanKerajaanNegeri');
-//                                var value11 = input11.value.replace(/,/g, '');
-//                                var input12 = document.getElementById('JumlahTunggakanKerajaanNegeri');
-//                                var value12 = input12.value.replace(/,/g, '');
-//                                var input13 = document.getElementById('BakiTunggakanBaharuKerajaanNegeri');
-//                                var value13 = input13.value.replace(/,/g, '');
+                                  var input1 = document.getElementById('BakiPinjamanPokokKerajaanNegeri');
+                                  var value1 = input1.value.replace(/,/g, '');
+                                  var input2 = document.getElementById('PokokBayaranKerajaanNegeri');
+                                  var value2 = input2.value.replace(/,/g, '');
+                                  var input3 = document.getElementById('FaedahBayaranKerajaanNegeri');
+                                  var value3 = input3.value.replace(/,/g, '');
+                                  var input4 = document.getElementById('JumlahBayaranKerajaanNegeri');
+                                  var value4 = input4.value.replace(/,/g, '');
+                                  var input5 = document.getElementById('PokokBayaranBulananKerajaanNegeri');
+                                  var value5 = input5.value.replace(/,/g, '');
+                                  var input6 = document.getElementById('FaedahBayaranBulananKerajaanNegeri');
+                                  var value6 = input6.value.replace(/,/g, '');
+                                  var input7 = document.getElementById('JumlahBayaranBulananKerajaanNegeri');
+                                  var value7 = input7.value.replace(/,/g, '');
+                                  var input8 = document.getElementById('BakiPinjamanPokokBaharuKerajaanNegeri');
+                                  var value8 = input8.value.replace(/,/g, '');
+                                  var input9 = document.getElementById('BakiTunggakanKerajaanNegeri');
+                                  var value9 = input9.value.replace(/,/g, '');
+                                  var input10 = document.getElementById('PokokBakiTunggakanKerajaanNegeri');
+                                  var value10 = input10.value.replace(/,/g, '');
+                                  var input11 = document.getElementById('FaedahBakiTunggakanKerajaanNegeri');
+                                  var value11 = input11.value.replace(/,/g, '');
+                                  var input12 = document.getElementById('JumlahTunggakanKerajaanNegeri');
+                                  var value12 = input12.value.replace(/,/g, '');
+                                  var input13 = document.getElementById('BakiTunggakanBaharuKerajaanNegeri');
+                                  var value13 = input13.value.replace(/,/g, '');
                                   var formattedValue = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-//                                var formattedValue1 = value1.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-//                                var formattedValue2 = value2.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-//                                var formattedValue3 = value3.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-//                                var formattedValue4 = value4.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-//                                var formattedValue5 = value5.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-//                                var formattedValue6 = value6.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-//                                var formattedValue7 = value7.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-//                                var formattedValue8 = value8.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-//                                var formattedValue9 = value9.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-//                                var formattedValue10 = value10.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-//                                var formattedValue11 = value11.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-//                                var formattedValue12 = value12.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-//                                var formattedValue13 = value13.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                                  var formattedValue1 = value1.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                                  var formattedValue2 = value2.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                                  var formattedValue3 = value3.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                                  var formattedValue4 = value4.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                                  var formattedValue5 = value5.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                                  var formattedValue6 = value6.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                                  var formattedValue7 = value7.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                                  var formattedValue8 = value8.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                                  var formattedValue9 = value9.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                                  var formattedValue10 = value10.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                                  var formattedValue11 = value11.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                                  var formattedValue12 = value12.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                                  var formattedValue13 = value13.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                                   input.value = formattedValue;
-//                                input1.value = formattedValue1;
-//                                input2.value = formattedValue2;
-//                                input3.value = formattedValue3;
-//                                input4.value = formattedValue4;
-//                                input5.value = formattedValue5;
-//                                input6.value = formattedValue6;
-//                                input7.value = formattedValue7;
-//                                input8.value = formattedValue8;
-//                                input9.value = formattedValue9;
-//                                input10.value = formattedValue10;
-//                                input11.value = formattedValue11;
-//                                input12.value = formattedValue12;
-//                                input13.value = formattedValue13;
+                                  input1.value = formattedValue1;
+                                  input2.value = formattedValue2;
+                                  input3.value = formattedValue3;
+                                  input4.value = formattedValue4;
+                                  input5.value = formattedValue5;
+                                  input6.value = formattedValue6;
+                                  input7.value = formattedValue7;
+                                  input8.value = formattedValue8;
+                                  input9.value = formattedValue9;
+                                  input10.value = formattedValue10;
+                                  input11.value = formattedValue11;
+                                  input12.value = formattedValue12;
+                                  input13.value = formattedValue13;
                                 }
 
                                 function addNewRow() {

@@ -7,9 +7,9 @@ if (!empty($_POST["emel"]) && !empty($_POST["KataLaluan"])) {
   $username = $_POST["emel"];
   $password = $_POST["KataLaluan"];
 
-  $con = mysqli_connect("localhost", "root", "", "sistempemantauanagensi") or die("Connection error: " . mysqli_error());
+  $conn = mysqli_connect("localhost", "root", "", "sistempemantauanagensi") or die("Connection error: " . mysqli_error());
   $query = "SELECT * FROM useragensi WHERE Emel = '$username' AND KataLaluan = '$password'";
-  $result = mysqli_query($con, $query);
+  $result = mysqli_query($conn, $query);
 
   if (mysqli_num_rows($result) == 1) {
     // Save the username in the session and redirect to the eventreg.php page

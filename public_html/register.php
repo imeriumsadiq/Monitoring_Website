@@ -23,7 +23,7 @@ if ($result->num_rows > 0) {
     $sql = "INSERT INTO useragensi (Nama,Agensi,Emel,KataLaluan) VALUES ('$username', '$agensi', '$email', '$password')";
     $insert_stmt = $conn->prepare($sql);
     $insert_stmt->execute();
-    header("Location: Login_Page.html");
+    header("Location: Login_Page.php");
 }
 //// Check if the form was submitted
 //if (mysqli_query($conn, $sql)) {

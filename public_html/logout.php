@@ -1,12 +1,9 @@
 <?php
+    session_start(); 
+    session_unset();
+    session_destroy();
 
-/* 
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
- */
-session_start();
-if(session_destroy()) // Destroying All Sessions
-{
-header("Location: Login_Page.php"); // Redirecting To Home Page
-}
+    $_SESSION["message_success"] = "Successfully Logged Out";
+    header("location: Login_Page.php");
+    exit(0);
 ?>
