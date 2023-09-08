@@ -728,7 +728,7 @@ echo'                         <div class="row">
                               <div class="col">
                                 <h2> Sumbangan Kerajaan Negeri (2% dari jumlah pendapatan)</h2>
                                 <label for="JumlahPendapatan" class="col col-form-label">Jumlah Pendapatan Semasa</label>
-                                <input type="text" class="form-control" id="JumlahPendapatanKerajaanNegeri" name="JumlahPendapatanKerajaanNegeri" onkeyup="KiraSumbanganPendapatan()"  required>
+                                <input type="text" class="form-control" id="JumlahPendapatanKerajaanNegeri" name="JumlahPendapatanKerajaanNegeri" onkeyup="KiraSumbanganPendapatan()"  required value="' . $row['JumlahPendapatanSemasaDP'] . '">
                               </div>
                             </div>
 
@@ -741,19 +741,19 @@ echo'                         <div class="row">
                             <div class="row">
                               <div class="col">
                                 <label class="col col-form-label">Tarikh</label>
-                                <input type="date" class="form-control" id="TarikhSumbanganPendapatan" name="TarikhSumbanganPendapatan"> 
+                                <input type="date" class="form-control" id="TarikhSumbanganPendapatan" name="TarikhSumbanganPendapatan" value="' . $row['TarikhSumbanganDP'] . '"> 
                               </div>
                             </div>
                             <div class="row">
                               <div class="col">
                                 <label class="col col-form-label">Amaun</label>
-                                <input type="text" class="form-control" id="AmaunSumbanganPendapatan" name="AmaunSumbanganPendapatan" readonly>
+                                <input type="text" class="form-control" id="AmaunSumbanganPendapatan" name="AmaunSumbanganPendapatan" readonly value="' . $row['AmaunSumbanganDP'] . '">
                               </div>
                             </div>
                             <div class="row">
                               <div class="col">
                                 <label class="col col-form-label">Bukti</label>
-                                <input type="file" class="form-control" id="BuktiSumbanganPendapatan" name="BuktiSumbanganPendapatan">
+                                <input type="file" class="form-control" id="BuktiSumbanganPendapatan" name="BuktiSumbanganPendapatan" value="' . $row['BuktiSumbanganDP'] . '">
                               </div>
                             </div>
                             <br>
@@ -767,8 +767,8 @@ echo'                         <div class="row">
                             <div class="row">
                               <div class="col">
                                 <h2> Sumbangan Kerajaan Negeri (10%)(Untuk projek usahama anak syarikat dengan pihak swasta)</h2>
-                                <label for="JumlahPendapatan" class="col col-form-label">Jumlah Keuntungan Semasa</label>
-                                <input type="text" class="form-control" id="JumlahKeuntunganProjek" name="JumlahKeuntunganProjek" onkeyup="KiraSumbanganKeuntungan()"  required>
+                                <label for="JumlahPendapatan" class="col col-form-label">Jumlah Keuntungan Semasa</label>JumlahKeuntunganSemasaSP
+                                <input type="text" class="form-control" id="JumlahKeuntunganProjek" name="JumlahKeuntunganProjek" onkeyup="KiraSumbanganKeuntungan()"  required value="' . $row['JumlahKeuntunganSemasaSP'] . '">
                               </div>
                             </div>
                             <br>
