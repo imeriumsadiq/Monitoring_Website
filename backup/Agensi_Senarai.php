@@ -1,7 +1,7 @@
 <?php
 
 require_once('conn.php');
-$query = "select * from infoagensi;";
+$query = "select * from infoagensi ;";
 $result = mysqli_query($conn,$query);
 
 ?>
