@@ -193,6 +193,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                       <td><?php echo $row['NamaAgensi'] ?></td>
                       <td><?php echo $row['NamaHubungiAgensi'] ?></td>
                       <td><?php echo '<a class="btn btn-primary" href="Agensi_KemasKini.php?updateid='.$row['ID'].'">KemasKini</a>'?></td>
+                      <td><?php echo '<a class="btn btn-primary" href="hapus.php?deleteid='.$row['ID'].'">Hapus</a>'?></td>
                       </tbody>
                         <?php
                         
